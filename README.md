@@ -7,3 +7,5 @@ git clone https://github.com/DZzzz2014/DZ.git
 email [mcdd@mail.ru](mcdd@mail)
 сайт [мой сайт](http://...)
 ссылка на картинку [![значение атрибута alt](HTTp://... ссылка на JPG)](http://...)
+
+был создан новый пользователь user2
