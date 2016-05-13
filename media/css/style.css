@@ -1,0 +1,79 @@
+body{
+margin: 0;
+padding: 0;
+}
+.header{
+text-align:center
+background-color: #fff;
+background: url("../img/Fon.jpg");
+
+
+}
+.header h1{
+float: left;
+text-shadow: 1px 2px 2px black; 
+color: gold;
+padding-left: 10px;
+
+}
+
+.topmenu{
+display: flex;
+
+}
+.topmenu a{
+flex: 1;
+display: block;
+text-align: center;
+color: gold;
+background: blue;
+text-decoration: none;
+padding: 5px 0;
+border-right: solid 1px black;
+
+}
+.topmenu a:hover {
+background: gold;
+color: black;
+
+}
+.content{
+-moz-column-count: 6;
+-moz-column-rule: 1px black solid;
+-moz-column-gap: 2em;
+
+-webkit-column-count: 6;
+-webkit-column-rule: 1px black solid;
+-webkit-column-gap: 2em;
+
+column-count: 6;
+column-rule: 1px black solid;
+column-gap: 2em;
+
+}
+.footer{
+padding: 50px 0;
+background: grey;
+text-align: center;
+
+}
+.btn {
+ white-space:normal;
+}
+
+@media screen and (max-width:768px){
+.header{
+height: 100px;
+
+
+}
+#logo {
+	
+display: none;
+
+}
+.topmenu {
+flex-direction: column;
+
+}
+}
