@@ -25,7 +25,7 @@
 	<nav class="topmenu">
 		<a href="/">Главная</a>
 		<a href="index.php?url=about">Кто мы</a>
-		<a href="#">Что мы можем</a>
+		<a href="index.php?url=examples">Что мы можем</a>
 		<a href="#">Цены</a>
 		<a href="#">Акции</a>
 		<a href="works.php">Примеры наших работ</a>
