@@ -1,4 +1,5 @@
-<?php require_once("config/config.php");?>
+<?php session_start();
+require_once("config/config.php");?>
 <!doctype html> 
 <html>
 <head>
@@ -9,7 +10,15 @@
 	<meta name="authоr" content="DZ"/>
 	<link rel="stylesheet" type ="text/css" href="media/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type ="text/css" href="media/css/style.css" />
-	
+<?php
+if($scripts){
+foreach($scripts as $one){
+?>
+<script src='<?=$one;?>'></script>
+<?php
+}
+}	
+?>
 </head>
 <body>
 	<div class= "header">	

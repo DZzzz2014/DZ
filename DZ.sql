@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Май 13 2016 г., 11:51
+-- Время создания: Май 18 2016 г., 12:45
 -- Версия сервера: 5.5.38-log
 -- Версия PHP: 5.5.13
 
@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- База данных: `DZ`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `auth`
+--
+
+CREATE TABLE IF NOT EXISTS `auth` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` tinytext NOT NULL,
+  `password` tinytext NOT NULL,
+  `block_unblock` enum('block','unblock') NOT NULL DEFAULT 'unblock',
+  `last_visit` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -58,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `maintexts` (
   `showhide` enum('show','hide') NOT NULL DEFAULT 'show',
   `putdate` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `maintexts`
@@ -67,7 +82,8 @@ CREATE TABLE IF NOT EXISTS `maintexts` (
 INSERT INTO `maintexts` (`id`, `name`, `body`, `url`, `lang`, `showhide`, `putdate`) VALUES
 (1, 'Добро пожаловать на сайт', 'это мастерская мебели с тотальной дизайн-поддержкой для клиентов: от проектирования и создания предметов из ваших идей до консультаций по сочетанию их с готовым или планирующимся интерьером. \r\n			Простые и естественные материалы, из которых мы создаем нашу мебель, передают ей красоту и гармонию, которые сама природа заложила в дерево и камень. Сталь, бетон, древесина – всё здесь является воплощением силы, надежности, спокойствия и молчаливого благородства. Именно эти качества мы стремимся привнести в дома наших клиентов, приближая облик мебели к сути используемых материалов, выбирая простые, строгие формы предметов, нейтральные цвета, избегая лишнего декора. Мы подчиняем дизайн функциональности и удобству, чтобы мебель служила вам долго и приносила радость.\r\n			Самовыражение без риска разочароваться. Поможем сделать круто. Всегда впечатляющий результат.\r\n			\r\n			<p><img src="media/img/flower.jpg" width="200" height="354" align="left" vspace="20"></p>', 'index', 'ru', 'show', '2016-05-11'),
 (2, 'Контакты', 'Телефон:\r\n555 555 555\r\n', 'contacts', 'ru', 'show', '2016-05-11'),
-(3, 'Кто мы', 'мы это мы - изготовление уникальных дизайнерских элементов декора', 'about', 'ru', 'show', '2016-05-11');
+(3, 'Кто мы', 'мы это мы - изготовление уникальных дизайнерских элементов декора', 'about', 'ru', 'show', '2016-05-11'),
+(4, 'Что мы можем', 'Солить \r\nПерчить\r\nварить\r\nзачищать\r\nсращивать\r\nнаращивать', 'examples', 'ru', 'show', '2016-05-16');
 
 -- --------------------------------------------------------
 
@@ -77,19 +93,53 @@ INSERT INTO `maintexts` (`id`, `name`, `body`, `url`, `lang`, `showhide`, `putda
 
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cat_id` int(11) NOT NULL,
+  `cat_id` tinytext NOT NULL,
   `name` tinytext NOT NULL,
   `body` text NOT NULL,
   `price` tinytext NOT NULL,
-  `product_code` int(11) NOT NULL,
+  `product_code` tinytext NOT NULL,
   `picture` tinytext NOT NULL,
   `picture_small` tinytext NOT NULL,
   `currency` tinytext NOT NULL,
   `status` tinytext NOT NULL,
   `putdate` date NOT NULL,
+  `user_id` int(11) NOT NULL,
   `showhide` enum('show','hide') NOT NULL DEFAULT 'show',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `products`
+--
+
+INSERT INTO `products` (`id`, `cat_id`, `name`, `body`, `price`, `product_code`, `picture`, `picture_small`, `currency`, `status`, `putdate`, `user_id`, `showhide`) VALUES
+(1, '0', 'стул деревянный', '<p>укпржфыуиуж</p>\r\n', '100 000 000', '0', '', '', 'BYR', 'new', '2016-05-18', 5, 'show'),
+(2, '0', 'стол ццц', '<p>фаКПЫЕТРКНЫТЦНКНРОЯЫВИ</p>\r\n', '111', '11123', '', '', 'BYR', 'new', '2016-05-18', 5, 'show');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `registration`
+--
+
+CREATE TABLE IF NOT EXISTS `registration` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` tinytext NOT NULL,
+  `password` tinytext NOT NULL,
+  `repeat_password` tinytext NOT NULL,
+  `name` tinytext NOT NULL,
+  `block_unblock` enum('block','unblock') NOT NULL DEFAULT 'unblock',
+  `date_reg` date NOT NULL,
+  `last_visit` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Дамп данных таблицы `registration`
+--
+
+INSERT INTO `registration` (`id`, `email`, `password`, `repeat_password`, `name`, `block_unblock`, `date_reg`, `last_visit`) VALUES
+(5, '123@nbv.ru', '123', '123', '123', 'unblock', '2016-05-16', '2016-05-16 10:37:49');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

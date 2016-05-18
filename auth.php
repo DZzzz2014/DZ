@@ -38,8 +38,12 @@ if($_POST){
 			echo"</span><br/>";
 		}
 	}else{
-		echo'OK';		
-	}
+		$user=mysqli_fetch_array($cat);	
+		$_SESSION['id']=$user['id'];
+		?>
+		<script>document.location.href='cabinet.php'</script>
+		<?php
+		}
 }
 	//echo"<pre>";
 	//print_r($errors);
