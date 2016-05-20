@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10
+-- version 4.4.15.5
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1:3307
--- Время создания: Май 20 2016 г., 12:54
--- Версия сервера: 5.5.38-log
--- Версия PHP: 5.5.13
+-- Хост: 127.0.0.1:3306
+-- Время создания: Май 20 2016 г., 17:44
+-- Версия сервера: 5.5.48
+-- Версия PHP: 5.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- База данных: `DZ`
@@ -23,31 +23,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `auth`
---
-
-CREATE TABLE IF NOT EXISTS `auth` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` tinytext NOT NULL,
-  `password` tinytext NOT NULL,
-  `block_unblock` enum('block','unblock') NOT NULL DEFAULT 'unblock',
-  `last_visit` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `categories`
 --
 
 CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` tinytext NOT NULL,
   `parent id` int(11) NOT NULL,
-  `showhide` enum('show','hide') NOT NULL DEFAULT 'show',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `showhide` enum('show','hide') NOT NULL DEFAULT 'show'
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `categories`
@@ -65,15 +49,14 @@ INSERT INTO `categories` (`id`, `name`, `parent id`, `showhide`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `maintexts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` tinytext NOT NULL,
   `body` text NOT NULL,
   `url` tinytext NOT NULL,
   `lang` enum('ru','eng') NOT NULL DEFAULT 'ru',
   `showhide` enum('show','hide') NOT NULL DEFAULT 'show',
-  `putdate` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `putdate` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `maintexts`
@@ -92,7 +75,7 @@ INSERT INTO `maintexts` (`id`, `name`, `body`, `url`, `lang`, `showhide`, `putda
 --
 
 CREATE TABLE IF NOT EXISTS `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `cat_id` tinytext NOT NULL,
   `name` tinytext NOT NULL,
   `body` text NOT NULL,
@@ -104,9 +87,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `status` tinytext NOT NULL,
   `putdate` date NOT NULL,
   `user_id` int(11) NOT NULL,
-  `showhide` enum('show','hide') NOT NULL DEFAULT 'show',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+  `showhide` enum('show','hide') NOT NULL DEFAULT 'show'
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `products`
@@ -129,16 +111,15 @@ INSERT INTO `products` (`id`, `cat_id`, `name`, `body`, `price`, `product_code`,
 --
 
 CREATE TABLE IF NOT EXISTS `registration` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `email` tinytext NOT NULL,
   `password` tinytext NOT NULL,
   `repeat_password` tinytext NOT NULL,
   `name` tinytext NOT NULL,
   `block_unblock` enum('block','unblock') NOT NULL DEFAULT 'unblock',
   `date_reg` date NOT NULL,
-  `last_visit` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `last_visit` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `registration`
@@ -148,6 +129,58 @@ INSERT INTO `registration` (`id`, `email`, `password`, `repeat_password`, `name`
 (5, '123@nbv.ru', '123', '123', '123', 'unblock', '2016-05-16', '2016-05-20 10:59:25'),
 (6, '123@kfjag.ru', '321', '321', '321', 'unblock', '2016-05-20', '2016-05-20 09:53:09');
 
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `maintexts`
+--
+ALTER TABLE `maintexts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT для таблицы `maintexts`
+--
+ALTER TABLE `maintexts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT для таблицы `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT для таблицы `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
