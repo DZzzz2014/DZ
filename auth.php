@@ -40,6 +40,13 @@ if($_POST){
 	}else{
 		$user=mysqli_fetch_array($cat);	
 		$_SESSION['id']=$user['id'];
+		
+		//создается апдейт поля LAST Visit в базе данных
+		$query="UPDATE registration SET last_visit=NOW() WHERE id=".$user['id'];
+		$cat=mysqli_query($dbcnx, $query);
+			if(!$cat){
+				exit($query);
+				}
 		?>
 		<script>document.location.href='cabinet.php'</script>
 		<?php

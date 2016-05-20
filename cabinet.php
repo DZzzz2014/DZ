@@ -1,5 +1,5 @@
 <?php
-$scripts=array('/media/ckeditor/ckeditor.js');
+$scripts=array('/media/ckeditor/ckeditor.js','/media/js/delete.js');
  require_once("templates/top.php");
 if($_SESSION['id']){
 if($_POST){
@@ -19,6 +19,25 @@ if($_POST){
 			echo"</span><br/>";
 		}
 	}else{
+	if($_FILES){
+	$tmp_name=$_FILES['picture']['tmp_name'];
+	 $file_end= '/uploads/'.time().$_FILES['picture']['name'];
+	 //'/uploads/'.date('y.m.d.h.i.s').'.jpg';
+	//'/uploads/'.$_FILES['picture']['name'];
+	$file=$_SERVER['DOCUMENT_ROOT'].$file_end;
+		
+	/*echo "<pre>";
+	print_r($_FILES);
+	echo "</pre>";
+	print_r(exit($file));*/
+	
+	if(!move_uploaded_file($tmp_name,$file)){
+		exit('ошибка загрузки');
+		}
+	}else{
+	$file_end='';
+	}
+	
 	$query="INSERT INTO products(
 		cat_id,
 		name,
@@ -37,7 +56,7 @@ if($_POST){
 		'".$_POST['price']."',
 		'".$_POST['currency']."',
 		'".$_POST['product_code']."',
-		'',
+		'".$file_end."',
 		'',
 		'".$_SESSION['id']."',
 		'new',
@@ -111,6 +130,53 @@ if($_POST){
 </form>
 
 
+
+<?php
+$query="SELECT*FROM products WHERE user_id=".$_SESSION['id']." ORDER BY id DESC"/*последний загружаемый товар выводится первым*/;
+$cat=mysqli_query($dbcnx,$query);
+if(!$cat){
+exit($query);
+}
+?>
+</br>
+<table class='table table-bordered table-stripted' width=100%>
+<tr>
+	<th width='200px'>Изображение</th>
+	<th>Название</th>
+	<th width='200px'>Действие</th>
+</tr>
+
+<?php
+while($tovs=mysqli_fetch_array($cat)){
+//echo $tovs['name']."<br/>";
+$url="?id=".$tovs['id'];
+	if($tovs['showhide']='show'){/*объявление переменных для добавления кнопки "скрыть/отобразить"*/
+	$showhide="<a href='tovs hide.php$url' class='btn btn-success btn-block'>скрыть</a>";
+	}else{
+	$showhide="<a href='tovs show.php$url' class='btn btn-success btn-block'>отобразить</a>";
+	}
+if($tovs['picture']!=''/*проверяем что бы переменная не была =0*/ ){
+$picture=$tovs['picture'];
+}else{
+$picture="/media/img/icon.png";
+}
+?>
+<tr>
+	<td><img src='<?=$picture;?>' width='200px'/></td>
+	<td><h3><?=$tovs['name'];?></h3>
+		<div><?=$tovs['product_code'];?></div>
+		<div>цена <b><?=$tovs['price'];?></b> <?=$tovs['currency'];?></div> 
+	</td>
+
+	<td><a href='#' class='btn btn-warning btn-block' onclick='delete_position("/adminka/tovsdel.php<?=$url?>","Вы действительно хотите удалить?")'>Удалить</a>
+	<a href="tovsedit.php<?=$url;/*добавить кнопки "редактировать*/?>" class="btn btn-success btn-block">редактировать</a>
+	<?=$showhide /*добавить кнопки "скрыть/отобразить"*/	?>
+	</td> 
+</tr>
+<?php
+}
+?>
+</table>
 
 <?php
 }else{
