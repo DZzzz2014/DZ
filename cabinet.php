@@ -150,10 +150,10 @@ exit($query);
 while($tovs=mysqli_fetch_array($cat)){
 //echo $tovs['name']."<br/>";
 $url="?id=".$tovs['id'];
-	if($tovs['showhide']='show'){/*объявление переменных для добавления кнопки "скрыть/отобразить"*/
-	$showhide="<a href='tovs hide.php$url' class='btn btn-success btn-block'>скрыть</a>";
+	if($tovs['showhide']=='show'){/*объявление переменных для добавления кнопки "скрыть/отобразить"*/
+	$showhide="<a href='tovshide.php$url' class='btn btn-success btn-block'>скрыть</a>";
 	}else{
-	$showhide="<a href='tovs show.php$url' class='btn btn-success btn-block'>отобразить</a>";
+	$showhide="<a href='tovsshow.php$url' class='btn btn-success btn-block'>отобразить</a>";
 	}
 if($tovs['picture']!=''/*проверяем что бы переменная не была =0*/ ){
 $picture=$tovs['picture'];
