@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Май 23 2016 г., 12:50
+-- Время создания: Май 25 2016 г., 12:44
 -- Версия сервера: 5.5.38-log
 -- Версия PHP: 5.5.13
 
@@ -91,17 +91,18 @@ CREATE TABLE IF NOT EXISTS `products` (
   `user_id` int(11) NOT NULL,
   `showhide` enum('show','hide') NOT NULL DEFAULT 'show',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- Дамп данных таблицы `products`
 --
 
 INSERT INTO `products` (`id`, `cat_id`, `name`, `body`, `price`, `product_code`, `picture`, `picture_small`, `currency`, `status`, `putdate`, `user_id`, `showhide`) VALUES
-(1, '0', 'стул деревянный', '<p>укпржфыуиуж</p>\r\n', '100 000 000', '0', '', '', 'BYR', 'new', '2016-05-18', 5, 'show'),
-(5, 'Прочее', 'трактор', '<p>беларус</p>\r\n', '121', 'tr 12', '', '', 'RUR', 'new', '2016-05-20', 5, 'show'),
-(11, 'Столы', 'цПРДЖО', '<p>ЗШЦКО</p>\r\n', '33', '2222', '/uploads/1463732257Tulips.jpg', '', 'BYR', 'new', '2016-05-20', 5, 'show'),
-(12, 'Прочее', 'последний загружаемы товар', '<p>последний загружаемый товар 11:22</p>\r\n', '1', '1122', '/uploads/1463732569FIL2829.JPG', '', 'BYR', 'new', '2016-05-20', 5, 'show');
+(11, '3', 'цПРДЖО', '<p>ЗШЦКО</p>\r\n', '33', '2222', '/uploads/1463732257Tulips.jpg', '', 'BYR', 'new', '2016-05-20', 5, 'show'),
+(12, '1', 'последний загружаемы товар', '<p>последний загружаемый товар 11:22</p>\r\n', '1', '1122', '/uploads/1463732569FIL2829.JPG', '', 'BYR', 'new', '2016-05-20', 5, 'show'),
+(13, '3', 'tutut', '<p>ututututu</p>\r\n', '123', '21', '/uploads/1464157831shelf_for_glasses 2.jpg', '', 'USD', 'new', '2016-05-25', 5, 'show'),
+(14, '2', 'стул2', '<p>стулк к к клооро</p>\r\n', '100', '100', '/uploads/1464157858shelf_for_glasses.jpg', '', 'USD', 'new', '2016-05-25', 5, 'show'),
+(19, '1', 'стул деревянный', '<p>ыцпфыпры</p>\r\n', '123', '111', '/uploads/146415815633kVx5_j0FE.jpg', '', 'RUR', 'new', '2016-05-25', 5, 'show');
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `registration` (
 --
 
 INSERT INTO `registration` (`id`, `email`, `password`, `repeat_password`, `name`, `block_unblock`, `date_reg`, `last_visit`) VALUES
-(5, '123@nbv.ru', '123', '123', '123', 'unblock', '2016-05-16', '2016-05-23 10:15:52'),
+(5, '123@nbv.ru', '123', '123', '123', 'unblock', '2016-05-16', '2016-05-25 09:30:01'),
 (6, '123@kfjag.ru', '321', '321', '321', 'unblock', '2016-05-20', '2016-05-23 09:08:37');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

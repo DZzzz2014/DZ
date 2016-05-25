@@ -6,9 +6,10 @@ exit($query);
 }
 while($cats=mysqli_fetch_array($cat)){
 ?>
+<br>
 <a href="product.php?id=<?=$cats['id']?>" class="btn btn-success">
 <?=$cats['name'];?>
-</a>
+</a></br>
 <?php
 }
  require_once("templates/bottom.php");   ?>

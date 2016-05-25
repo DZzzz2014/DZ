@@ -87,7 +87,7 @@ if($_POST){
 		}
 		while($cats=mysqli_fetch_array($cat)){
 		?>
-		<option name=<?=$cats['id']?>>
+		<option value=<?=$cats['id']?>>
 		<?=$cats['name'];?>
 		</option>
 		<?php

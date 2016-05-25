@@ -10,7 +10,10 @@ require_once("config/config.php");?>
 	<meta name="authоr" content="DZ"/>
 	<link rel="stylesheet" type ="text/css" href="media/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type ="text/css" href="media/css/style.css" />
-<?php
+<script src=/media/js/jquery-2.2.4.min.js>
+</script>
+	<?php
+
 if($scripts){
 foreach($scripts as $one){
 ?>
@@ -43,7 +46,7 @@ foreach($scripts as $one){
 	<div class="cont">
 		<div class=col-md-2>
 			<h3>Услуги</h3>
-			<a href="#" class="btn btn-success btn-block" >Изготовление уникальных дизайнерских элементов декора</a>
+			<a href="#" class="btn btn-success btn-block" >Изготовление уникальных дизайнерских элементов декора</a></br>
 				
 		</div>
 		<div class=col-md-8>

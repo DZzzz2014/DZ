@@ -3,7 +3,7 @@
 		<div class=col-md-2>
 		<?php if($_SESSION['id']){
 		?>
-		<a href="cabinet.php">Кабинет пользователя</a>
+		<br><a href="cabinet.php">Кабинет пользователя</a>
 		<br><a href="logout.php">Выход</a>
 		<?php
 		}else{
@@ -22,7 +22,7 @@
 	<footer class="footer">
 		&copy; mcdd@mai.ru
 		
-		<img src="3d.png" style="width:22px;height:22px;object-fit:cover;">
+		<img src="/media/img/dz_400.png" style="width:22px;height:22px;object-fit:cover;">
 		</img>
 	</footer>
 	</body>
