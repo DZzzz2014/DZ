@@ -13,7 +13,7 @@ exit($query);
 while($cats=mysqli_fetch_array($cat)){
 ?>
 <br><a href="#" class="btn btn-link" data_id='<?=$cats['id'];?>'>
-<?=$cats['name'];?>
+<?=$cats['name']; ?>
 </a>
 <?php
 }

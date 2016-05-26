@@ -13,8 +13,11 @@
 		<?php
 		}
 		?>
-			<h3>Погода</h3>
-					<!--pogoda.by-->
+		<div class=col-md-2>
+			<h3>Реклама?</h3>
+							
+		</div>
+					
 					
 		</div>
 	</div>

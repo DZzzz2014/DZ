@@ -12,8 +12,8 @@ require_once("config/config.php");?>
 	<link rel="stylesheet" type ="text/css" href="media/css/style.css" />
 <script src=/media/js/jquery-2.2.4.min.js>
 </script>
-	<?php
 
+<?php
 if($scripts){
 foreach($scripts as $one){
 ?>
@@ -25,13 +25,13 @@ foreach($scripts as $one){
 </head>
 <body>
 	<div class= "header">	
-<div class=col-md-8>	
-	<img id="logo" src="media/img/Logo.png"/>
-	</div>
-	<div class=col-md-4>
-		<h1>Декоративные изделия из стали в стиле Loft - для дома и квартиры</h1>
+		<div class=col-md-8>	
+			<img id="logo" src="media/img/Logo.png"/>
 		</div>
-	<br style="clear:both"/>
+		<div class=col-md-4>
+			<h1>Декоративные изделия из стали в стиле Loft - для дома и квартиры</h1>
+		</div>
+		<br style="clear:both"/>
 	</div>
 
 	<nav class="topmenu">
