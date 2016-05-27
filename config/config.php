@@ -3,6 +3,8 @@ $dblocation="localhost";
 $dbname="DZ";
 $dbuser="root";
 $dbpass="";
+$cfg['LoginCookieValidity']=36000;
+
 
 $dbcnx=mysqli_connect($dblocation, $dbuser, $dbpass);
 if(!$dbcnx){

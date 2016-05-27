@@ -5,17 +5,20 @@ padding: 0;
 .header{
 background-color: #fff;
 background: url("../img/Fon.jpg");
+
 }
 .header h1{
 float: left;
+font-family: elephant;
 text-align:center;
 text-shadow: 1px 1px 1px black; 
-color: rgb(138, 119, 100);
-padding: 0 0 10px;
+color: -moz-ButtonDefault;
+margin-top: 5px;
+margin-bottom: 5px;
 }
 #logo {
 float: left;
-padding: 30px 0;
+padding: 10px 0;
 }
 .topmenu{
 display: flex;
@@ -35,24 +38,30 @@ font-size: 16px;
 .topmenu a:hover {
 background: #FFFACD;
 color: black;
-
 }
 .content{
--moz-column-count: 6;
+-moz-column-count: 1;
 -moz-column-rule: 1px black solid;
 -moz-column-gap: 2em;
 
--webkit-column-count: 6;
+-webkit-column-count: 1;
 -webkit-column-rule: 1px black solid;
 -webkit-column-gap: 2em;
 
-column-count: 6;
+column-count: 1;
 column-rule: 1px black solid;
 column-gap: 2em;
 
+margin: 20px;
 }
+
+.side_menu{
+padding: 20px 0;	
+
+}
+
 .footer{
-padding: 50px 0;
+padding: 10px 0;
 background: grey;
 text-align: center;
 
@@ -63,14 +72,14 @@ text-align: center;
 
 @media screen and (max-width:768px){
 .header{
-height: 100px;
-}
+	height: 100px;
+	}
 #logo {
-display: none;
-}
+	display: none;
+	}
 .topmenu {
-flex-direction: column;
-}
+	flex-direction: column;
+	}
 }
 
 .modal-window{

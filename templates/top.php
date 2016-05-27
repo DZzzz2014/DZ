@@ -46,7 +46,14 @@ foreach($scripts as $one){
 	<div class="cont">
 		<div class=col-md-2>
 			<h3>Услуги</h3>
-			<a href="#" class="btn btn-success btn-block" >Изготовление уникальных дизайнерских элементов декора</a></br>
-				
+			<a href="#" class="btn btn-success btn-block" >Architectural Design</a></br>
+			<a href="#" class="btn btn-success btn-block" >Renovation Design Concepts</a></br>
+			<a href="#" class="btn btn-success btn-block" >Custom New Home Concepts</a></br>
+			<a href="#" class="btn btn-success btn-block" >Luxury & Prestige Home Concepts</a></br>
+			<a href="#" class="btn btn-success btn-block" >External works & Landscape Concepts</a></br>
+			<a href="#" class="btn btn-success btn-block" >Interior Design</a></br>
+			<a href="#" class="btn btn-success btn-block" >Graphic Design</a></br>
+			<a href="#" class="btn btn-success btn-block" >Logo Design</a></br>
+			<a href="#" class="btn btn-success btn-block" >Freelance Art</a></br>		
 		</div>
 		<div class=col-md-8>
