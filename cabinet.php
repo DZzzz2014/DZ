@@ -1,5 +1,5 @@
 <?php
-$scripts=array('/media/ckeditor/ckeditor.js','/media/js/delete.js');
+$scripts=array('/media/ckeditor/ckeditor.js','/media/js/delete.js', '/media/js/parse_google.js');
  require_once("templates/top.php");
 if($_SESSION['id']){
 if($_POST){
@@ -19,7 +19,7 @@ if($_POST){
 			echo"</span><br/>";
 		}
 	}else{
-	if($_FILES){
+	if($_FILES['picture']['error'] ==0 ){
 	$tmp_name=$_FILES['picture']['tmp_name'];
 	 $file_end= '/uploads/'.time().$_FILES['picture']['name'];
 	 //'/uploads/'.date('y.m.d.h.i.s').'.jpg';
@@ -128,7 +128,8 @@ if($_POST){
   </div>
   <button type="submit" class="btn btn-default">Отправить</button>
 </form>
-
+<a href='#' class="btn btn-block btn-success" id='google-search'>Искать картинки к товарам</a> 
+<div class='result'></div>
 
 
 <?php
