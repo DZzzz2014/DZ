@@ -35,17 +35,17 @@ foreach($scripts as $one){
 	</div>
 
 	<nav class="topmenu">
-		<a href="/">Главная</a>
-		<a href="index.php?url=about">Кто мы</a>
-		<a href="index.php?url=examples">Что мы можем</a>
-		<a href="#">Цены</a>
-		<a href="#">Акции</a>
-		<a href="works.php">Примеры наших работ</a>
-		<a href="index.php?url=contacts">Контакты</a>
+		<a href="/" class="btn btn-success">Главная</a>
+		<a href="index.php?url=about" class="btn btn-success">Кто мы</a>
+		<a href="index.php?url=examples" class="btn btn-success">Что мы можем</a>
+		<a href="#" class="btn btn-success">Цены</a>
+		<a href="#" class="btn btn-success">Акции</a>
+		<a href="works.php" class="btn btn-success">Примеры наших работ</a>
+		<a href="index.php?url=contacts" class="btn btn-success">Контакты</a>
 	</nav>
 	<div class="cont">
-		<div class=col-md-2>
-			<h3>Услуги</h3>
+		<div class="col-md-2 side_menu_1">
+			<h3 Style="text-align: center">Услуги</h3>
 			<a href="#" class="btn btn-success btn-block" >Architectural Design</a></br>
 			<a href="#" class="btn btn-success btn-block" >Renovation Design Concepts</a></br>
 			<a href="#" class="btn btn-success btn-block" >Custom New Home Concepts</a></br>

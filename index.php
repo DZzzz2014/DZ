@@ -15,7 +15,7 @@ $str=mysqli_fetch_array($adr);
 //print_r($str);
 //echo"</pre>";
    ?>
-			<h2><?=$str['name']; //<?php echo$str['name'];?></h2> 
+			<h2 style="margin: 20px;"><?=$str['name']; //<?php echo$str['name'];?></h2> 
 			<div class="content"> 
 			<?=$str['body'];?>
 			</div>

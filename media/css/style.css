@@ -12,7 +12,7 @@ float: left;
 font-family: elephant;
 text-align:center;
 text-shadow: 1px 1px 1px black; 
-color: -moz-ButtonDefault;
+color: rgb(138,118,100);
 margin-top: 5px;
 margin-bottom: 5px;
 }
@@ -25,14 +25,14 @@ display: flex;
 }
 .topmenu a{
 flex: 1;
-display: block;
+
 text-align: center;
 color: rgb(255, 228, 181);
 text-shadow: 1px 1px 1px black; 
 background: rgb(70,130,180);
-text-decoration: none;
+
 padding: 5px 0;
-border-right: solid 1px black;
+
 font-size: 16px;
 }
 .topmenu a:hover {
@@ -51,19 +51,25 @@ color: black;
 column-count: 1;
 column-rule: 1px black solid;
 column-gap: 2em;
-
+text-align: justify;
 margin: 20px;
 }
 
 .side_menu{
 padding: 20px 0;	
-
 }
-
+.side_menu_1 > a{
+background-color: rgb(70,130,180);
+}
+.side_menu_1 > a:hover{
+background-color: #FFFACD;
+color: black;
+}
 .footer{
 padding: 10px 0;
-background: grey;
+background: rgb(70,130,180);
 text-align: center;
+border: 1px solid #4cae4c;
 
 }
 .btn {
