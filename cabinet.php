@@ -3,6 +3,12 @@ $scripts=array('/media/ckeditor/ckeditor.js','/media/js/delete.js', '/media/js/p
  require_once("templates/top.php");
 if($_SESSION['id']){
 if($_POST){
+$_POST['cat_id']=@ereg_replace('script', '<span>script</span>', $_POST['cat_id']);
+$_POST['name']=@ereg_replace('script', '<span>script</span>',$_POST['name']);
+$_POST['body']=@ereg_replace('script', '<span>script</span>', $_POST['body']);
+$_POST['price']=@ereg_replace('script', '<span>script</span>', $_POST['price']);
+$_POST['currency']=@ereg_replace('script', '<span>script</span>', $_POST['currency']);
+$_POST['product_code']=@ereg_replace('script', '<span>script</span>', $_POST['product_code']);
 
 	$error=array();
 	$filterArr=array('');
@@ -185,4 +191,3 @@ echo'ошибка входа';
 }
 require_once("templates/bottom.php"); 
 ?>
-<!--<script src='/media/ckeditor/ckeditor.js'></script>>

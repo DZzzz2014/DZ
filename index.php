@@ -1,5 +1,11 @@
 <?php require_once("templates/top.php");
 if($_GET['url']){
+	$_GET['url']=@ereg_replace("'", "", $_GET['url']);
+	$_GET['url']=@ereg_replace('%', '', $_GET['url']);
+	$_GET['url']=@ereg_replace('UNION', '', $_GET['url']);
+	$_GET['url']=@ereg_replace('"', '', $_GET['url']);
+	$_GET['url']=@ereg_replace('""', '', $_GET['url']);
+	
 	$file=$_GET['url'];
 }else{
 	$file='index';

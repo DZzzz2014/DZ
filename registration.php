@@ -3,7 +3,11 @@ if($_POST){
 	//echo"<pre>";
 	//print_r($_POST);
 	//echo "</pre>";
-
+$_POST['email']=@ereg_replace('script', '<span>script</span>', $_POST['email']);
+$_POST['password']=@ereg_replace('script', '<span>script</span>',$_POST['password']);
+$_POST['repeat_password']=@ereg_replace('script', '<span>script</span>', $_POST['repeat_password']);
+$_POST['name']=@ereg_replace('script', '<span>script</span>', $_POST['name']);
+	
 	$error=array();
 	$filterArr=array('');
 	$error[]=(empty($_POST['name']))?'поле Name не заполнено':'';

@@ -1,5 +1,8 @@
 <?php require_once("templates/top.php"); 
 if($_POST){
+$_POST['email']=@ereg_replace('script', '<span>script</span>', $_POST['email']);
+$_POST['password']=@ereg_replace('script', '<span>script</span>',$_POST['password']);
+
 	//echo"<pre>";
 	//print_r($_POST);
 	//echo "</pre>";
