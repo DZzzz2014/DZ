@@ -10,6 +10,7 @@ require_once("config/config.php");?>
 	<meta name="authоr" content="DZ"/>
 	<link rel="stylesheet" type ="text/css" href="media/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type ="text/css" href="media/css/style.css" />
+	<link href='https://fonts.googleapis.com/css?family=Ruslan+Display&subset=latin,cyrillic' rel='stylesheet' type='text/css'/>
 <script src=/media/js/jquery-2.2.4.min.js>
 </script>
 
@@ -24,6 +25,7 @@ foreach($scripts as $one){
 ?>
 </head>
 <body>
+<main>
 	<div class= "header">	
 		<div class=col-md-8>	
 			<img id="logo" src="media/img/Logo.png"/>
@@ -35,25 +37,20 @@ foreach($scripts as $one){
 	</div>
 
 	<nav class="topmenu">
-		<a href="/" class="btn btn-success btn-block">Главная</a>
-		<a href="index.php?url=about" class="btn btn-success btn-block">Кто мы</a>
-		<a href="index.php?url=examples" class="btn btn-success btn-block">Что мы можем</a>
-		<a href="#" class="btn btn-success btn-block">Цены</a>
-		<a href="#" class="btn btn-success btn-block">Акции</a>
-		<a href="works.php" class="btn btn-success btn-block">Примеры наших работ</a>
-		<a href="index.php?url=contacts" class="btn btn-success btn-block">Контакты</a>
+		<a href="/">Главная</a>
+		<a class="<?php if($_GET['url']=="about"){echo "active-link";}  ?>" href="index.php?url=about">Кто мы и что мы можем</a>
+		<a href="index.php?url=examples">Примеры наших работ</a>
+		<a href="works.php">Каталог</a>
+		<a href="index.php?url=contacts">Контакты</a>
 	</nav>
 	<div class="cont">
 		<div class="col-md-2 side_menu_1">
-			<h3 Style="text-align: center">Услуги</h3>
+			<!--<h3 Style="text-align: center">Услуги</h3>
 			<a href="#" class="btn btn-success btn-block" >Architectural Design</a></br>
 			<a href="#" class="btn btn-success btn-block" >Renovation Design Concepts</a></br>
 			<a href="#" class="btn btn-success btn-block" >Custom New Home Concepts</a></br>
 			<a href="#" class="btn btn-success btn-block" >Luxury & Prestige Home Concepts</a></br>
 			<a href="#" class="btn btn-success btn-block" >External works & Landscape Concepts</a></br>
-			<a href="#" class="btn btn-success btn-block" >Interior Design</a></br>
-			<a href="#" class="btn btn-success btn-block" >Graphic Design</a></br>
-			<a href="#" class="btn btn-success btn-block" >Logo Design</a></br>
-			<a href="#" class="btn btn-success btn-block" >Freelance Art</a></br>		
+			-->
 		</div>
 		<div class=col-md-8>

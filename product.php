@@ -13,8 +13,12 @@ exit($query);
 while($cats=mysqli_fetch_array($cat)){
 ?>
 <br><a href="#" class="btn btn-link" data_id='<?=$cats['id'];?>'>
-<?=$cats['name']; ?>
+ <?=$cats['name'];?> 
+ <?php 
+ echo "<img src='".$cats['picture']."' width=100px height=50px>";
+ ?>
 </a>
+
 <?php
 }
 ?>
