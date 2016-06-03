@@ -11,6 +11,15 @@ require_once("config/config.php");?>
 	<link rel="stylesheet" type ="text/css" href="media/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type ="text/css" href="media/css/style.css" />
 	<link href='https://fonts.googleapis.com/css?family=Ruslan+Display&subset=latin,cyrillic' rel='stylesheet' type='text/css'/>
+<?php
+if($styles){
+foreach($styles as $one){
+?>
+<link rel="stylesheet" type ="text/css" href="<?=$one;?>" />
+<?php
+}
+}	
+?>
 <script src=/media/js/jquery-2.2.4.min.js>
 </script>
 

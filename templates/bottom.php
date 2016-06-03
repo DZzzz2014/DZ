@@ -18,6 +18,41 @@
 			<!--<div class="col-md-2">
 				<h3>Реклама?</h3>									
 			</div>	-->
+<!-- Корзинка -->
+<div id="basket">
+<table>
+<tbody>
+<tr style="display: none;" class="hPb">
+<td>Выбрано:</td>
+<td><span id="totalGoods">0</span> товаров</td>
+</tr>
+<tr style="display: none;" class="hPb">
+<td>Сумма: &asymp; </td>
+<td><span id="totalPrice">0</span> руб.</td>
+</tr>
+<tr style="display: none;" class="hPb">
+<td>Куки:</td>
+<td><span id="gugu">0</span> </td>
+</tr>
+<tr style="display: table-row;" class="hPe">
+<td colspan="2">Корзина пуста</td>
+</tr>
+<tr>
+<td><a style="display: none;" id="clearBasket" href="#">Очистить</a></td>
+<td><a style="display: none;" id="checkOut" href="#">Оформить</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<style>
+#clearBasket, #checkOut {
+ display: none;
+}
+.hPb {
+    display: none;
+}
+</style>
 	</div>
 </main>	
 <br style="clear:both"/>

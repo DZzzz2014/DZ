@@ -51,7 +51,7 @@ $_POST['name']=@ereg_replace('script', '<span>script</span>', $_POST['name']);
 		if(!$cat){
 			exit($query);
 			}
-		
+		@mail($_POST['email'], 'My Subject', $message);
 		?>
 		<script>
 			document.location.href='index.php';
