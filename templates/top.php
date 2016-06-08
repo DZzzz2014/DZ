@@ -51,6 +51,7 @@ foreach($scripts as $one){
 		<a href="index.php?url=examples">Примеры наших работ</a>
 		<a href="works.php">Каталог</a>
 		<a href="index.php?url=contacts">Контакты</a>
+		<a href="tasks.php">Задания от Павла Ш</a>
 	</nav>
 	<div class="cont">
 		<div class="col-md-2 side_menu_1">
